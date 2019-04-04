@@ -14,38 +14,47 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Listado</a></li>
-                <li><a href="#">Alta</a></li>
-                <li><a href="#">Borrado</a></li>
-                <li><a href="#">Actualizar</a></li>
-                <li><a href="#">Acerca de</a></li>
+            <ul class="left hide-on-med-and-down" style="margin-left: 18px;">
+                <li><i class="material-icons" id="desktopButton" style="cursor: pointer;">menu</i></li>
             </ul>
         </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Listado</a></li>
-        <li><a href="#">Alta</a></li>
-        <li><a href="#">Borrado</a></li>
-        <li><a href="#">Actualizar</a></li>
-        <li><a href="#">Acerca de</a></li>
+        <li id="menu_inicio"><a href="#">Inicio</a></li>
+        <li id="menu_listado"><a href="#">Listado</a></li>
+        <li id="menu_alta"><a href="#">Alta</a></li>
+        <li id="menu_borrado"><a href="#">Borrado</a></li>
+        <li id="menu_actualizar"><a href="#">Actualizar</a></li>
+        <li id="menu_acercade"><a href="#">Acerca de</a></li>
     </ul>
 
-    <div id="panel_inicio"></div>
-    <div id="panel_listado"></div>
-    <div id="panel_alta"></div>
-    <div id="panel_borrado"></div>
-    <div id="panel_actualizar"></div>
-    <div id="panel_acercade"></div>
+    <div id="panel_inicio">
+        <h3>panel_inicio</h3>
+    </div>
+    <div id="panel_listado">
+        <h3>panel_listado</h3>
+    </div>
+    <div id="panel_alta">
+        <h3>panel_alta</h3>
+    </div>
+    <div id="panel_borrado">
+        <h3>panel_borrado</h3>
+    </div>
+    <div id="panel_actualizar">
+        <h3>panel_actualizar</h3>
+    </div>
+    <div id="panel_acercade">
+        <h3>panel_acercade</h3>
+    </div>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/controlador.js"></script>
+
+
 
 </body>
 
