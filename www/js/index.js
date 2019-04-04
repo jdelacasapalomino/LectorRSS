@@ -7,5 +7,12 @@ $(document).ready(function () {
   $('#desktopButton').click(function () {
     $('.sidenav').sidenav('open');
   });
-  
+
+
+  $('[id^="menu_"]').each(function () {
+    $(this).click(function () {
+      $('.sidenav').sidenav('close');
+    });
+  });
+
 });

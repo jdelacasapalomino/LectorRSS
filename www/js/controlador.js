@@ -18,7 +18,7 @@ $.controlador.init = function (panel) {
         let id = $(this).attr('id').substring(5);
 
         $("#menu_" + id).click(function () {
-            console.log("#menu_" + id);
+            console.log("#panel_" + id);
             $.controlador.mostrar("#panel_" + id);
         });
     });
@@ -31,6 +31,7 @@ $.controlador.mostrar = function (panel) {
     $($.controlador.panel_nuevo).hide();
     $.controlador.panel_activo = panel;
     $(panel).show();
+    
 
 };
 
