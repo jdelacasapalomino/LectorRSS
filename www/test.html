@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+</head>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<select id="listaRSS">
+  <option  value="0" disabled selected>Choose your option</option>
+  <option  value="1">El País</option>
+  <option value="2">Marca - Selección Española</option>
+</select>
+
+<button type="button" onclick="loadDoc()">Cargar</button>
+<br><br>
+<table id="demo"></table>
+
+
+
+<script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+
+
+
+<script>
+function loadDoc() {
+  var cors = "https://cors-anywhere.herokuapp.com/"
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+
+
+  switch ($("#listaRSS :selected").val()){
+
+    case "1":
+      xhttp.open("GET", cors + "https://cincodias.elpais.com/rss/cincodias/ultimas_noticias.xml", true);
+      break;
+    case "2":
+      xhttp.open("GET", cors + "https://e00-marca.uecdn.es/rss/futbol/seleccion.xml", true);
+      break;
+  }
+  
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>TITLE</th><th>DESCRIPTION</th></tr>";
+  var x = xmlDoc.getElementsByTagName("item");
+  for (i = 0; i <x.length; i++) { 
+    table += '<tr><td><a href="' + x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue + '">' + 
+    x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
+    "</a></td><td>" +
+    x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+</body>
+</html>
