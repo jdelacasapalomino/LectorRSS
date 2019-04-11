@@ -15,4 +15,10 @@ $(document).ready(function () {
     });
   });
 
+  $('#boton_guardar').click(function() {
+      console.log( "nombre canal: " + $('#nombre').val()  +  "url: " + $('#url').val() )
+    });
+
+
+
 });
