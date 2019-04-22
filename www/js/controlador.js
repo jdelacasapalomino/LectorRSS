@@ -14,7 +14,6 @@ $.controlador.init = function (panel) {
     $.controlador.mostrar($.controlador.panel_activo);
 
     $('[id^="menu_"]').each(function () {
-
         let id = $(this).attr('id').substring(5);
 
         $("#menu_" + id).click(function () {
@@ -25,13 +24,16 @@ $.controlador.init = function (panel) {
 
 }
 
+
 $.controlador.mostrar = function (panel) {
 
     $($.controlador.panel_activo).hide();
     $($.controlador.panel_nuevo).hide();
     $.controlador.panel_activo = panel;
+    console.log("test");
     $(panel).show();
     
 
 };
+
 

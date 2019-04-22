@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>LectorRSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css">
     <link href="css/materialize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -30,38 +30,45 @@
         <li id="menu_acercade"><a href="#">Acerca de</a></li>
     </ul>
 
-    <div id="panel_inicio">
+    <div id="panel_inicio" class="container">
         <h3>panel_inicio</h3>
     </div>
-    <div id="panel_listado">
+    <div id="panel_listado" class="container">
         <h3>panel_listado</h3>
+        <div id="divCanales" class="collection hide"></div>
     </div>
     <div id="panel_alta" class="container">
-        <h3  style="margin-bottom: 50px">panel_alta</h3>
+        <h3>panel_alta</h3>
         <div class="input-field col s6">
-            <input placeholder="" id="nombre" type="text" class="validate" >
-            <label for="first_name">Nombre del canal</label>
-          </div>
-          <div class="input-field col s6">
+            <input placeholder="" id="nombreCanal" type="text" class="validate">
+            <label>Nombre del canal</label>
+        </div>
+        <div class="input-field col s6">
             <input placeholder="" id="url" type="text" class="validate">
-            <label for="first_name">Url del canal</label>
-          </div>
-          <a class="waves-effect waves-light btn" id="boton_guardar">Guardar</a>
+            <label>Url del canal</label>
+        </div>
+        <a class="waves-effect waves-light btn" id="botonGuardar">Guardar</a>
     </div>
-    <div id="panel_borrado">
+    <div id="panel_borrado" class="container">
         <h3>panel_borrado</h3>
     </div>
-    <div id="panel_actualizar">
+    <div id="panel_actualizar" class="container">
         <h3>panel_actualizar</h3>
     </div>
-    <div id="panel_acercade">
+    <div id="panel_acercade" class="container">
         <h3>panel_acercade</h3>
+    </div>
+    <div id="panel_canal" class="container">
+        <h3>panel_canal</h3>
+        <table id="contenidoCanal"></div>
     </div>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/controlador.js"></script>
+    <script type="text/javascript" src="js/canales.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
 
 
 

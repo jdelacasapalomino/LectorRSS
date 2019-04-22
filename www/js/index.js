@@ -1,8 +1,10 @@
 $(document).ready(function () {
 
+  $.controlador.init(panel_inicio);
+
+
   $('.sidenav').sidenav();
 
-  $.controlador.init(panel_inicio);
 
   $('#desktopButton').click(function () {
     $('.sidenav').sidenav('open');
@@ -15,9 +17,24 @@ $(document).ready(function () {
     });
   });
 
-  $('#boton_guardar').click(function() {
-      console.log( "nombre canal: " + $('#nombre').val()  +  "url: " + $('#url').val() )
+
+  $('#botonGuardar').click(function () {
+    console.log("nombre canal: " + $('#nombreCanal').val() + "; url: " + $('#url').val())
+    canal = { nombre: $('#nombreCanal').val(), url: $('#url').val() }
+    $.canales.add(canal);
+  });
+
+
+  $('#menu_listado').click(function () {
+    $.canales.mostrarCanales();
+    // esta parte no se ejecuta si se extrae fuera ¿Por qué?
+    $('[id^="canal_"]').click(function () {
+      let idCanal = $(this).attr('value');
+      $.canales.mostrarCanal(idCanal);
     });
+  });
+
+
 
 
 
