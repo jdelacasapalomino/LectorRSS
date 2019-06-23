@@ -6,7 +6,6 @@ if ((JSON.parse(localStorage.getItem(0)) != undefined)) {
 } else {
   canalPorDefecto2 = { nombre: "Eurogamer (canal por defecto)", url: "https://www.eurogamer.es/?format=rss&platform=PC"}
   canalPorDefecto3 = { nombre: "ABC (canal por defecto)", url: "https://www.abc.es/rss/feeds/abc_EspanaEspana.xml"}
-  $.canales.listaCanales.push(canalPorDefecto1)
   $.canales.listaCanales.push(canalPorDefecto2)
   $.canales.listaCanales.push(canalPorDefecto3)
   localStorage.setItem(0, JSON.stringify($.canales.listaCanales));
