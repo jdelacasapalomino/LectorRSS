@@ -30,7 +30,6 @@ $.controlador.mostrar = function (panel) {
     $($.controlador.panel_activo).hide();
     $($.controlador.panel_nuevo).hide();
     $.controlador.panel_activo = panel;
-    console.log("test");
     $(panel).show();
     
 

@@ -13,7 +13,7 @@
 
 <body>
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper" style="background-color: #F3B54A">
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down" style="margin-left: 18px;">
                 <li><i class="material-icons" id="desktopButton" style="cursor: pointer;">menu</i></li>
@@ -25,21 +25,37 @@
         <li id="menu_inicio"><a href="#">Inicio</a></li>
         <li id="menu_listado"><a href="#">Listado</a></li>
         <li id="menu_alta"><a href="#">Alta</a></li>
-        <li id="menu_borrado"><a href="#">Borrado</a></li>
-        <li id="menu_actualizar"><a href="#">Actualizar</a></li>
+        <li id="menu_borrado"><a href="#">Borrar</a></li>
+        <!--<li id="menu_actualizar"><a href="#">Actualizar</a></li>-->
         <li id="menu_acercade"><a href="#">Acerca de</a></li>
     </ul>
 
-    <div id="panel_inicio" class="container">
-        <h3>panel_inicio</h3>
+    <div id="panel_inicio" class="container" hidden>
+        <div style="margin-bottom: 30px; margin-top: 20px">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Inicio</span>
+                    <p>Aquí se muestran todas las noticias de los canales añadidos además de los canales por defecto.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="canalesInicio"></div>
     </div>
-    <div id="panel_listado" class="container">
-        <h3>panel_listado</h3>
-        <div id="divCanales" class="collection hide"></div>
+    <div id="panel_listado" class="container" hidden>
+        <div id="divListaCanales" class="collection hide" style="margin-top: 40px"></div>
     </div>
-    <div id="panel_alta" class="container">
-        <h3>panel_alta</h3>
-        <div class="input-field col s6">
+    <div id="panel_alta" class="container" hidden>
+        <div style="margin-bottom: 30px; margin-top: 20px">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Alta</span>
+                    <p>Esta aplicación es compatible tanto con RSS como con ATOM, puede añadir canales de cualquiera de los dos tipos. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="input-field col s6" style="margin-top: 40px">
             <input placeholder="" id="nombreCanal" type="text" class="validate">
             <label>Nombre del canal</label>
         </div>
@@ -49,25 +65,43 @@
         </div>
         <a class="waves-effect waves-light btn" id="botonGuardar">Guardar</a>
     </div>
-    <div id="panel_borrado" class="container">
-        <h3>panel_borrado</h3>
+    <div id="panel_borrado" class="container" hidden>
+        <div id="divListaCanalesBorrado" class="hide" style="margin-top: 40px"></div>
+        <!-- Modal Structure -->
+        <div id="modalBorrado" class="modal">
+            <div class="modal-content">
+                <h5>¿Está seguro?</h5>
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-red btn-flat">Cancelar</a>
+                <a href="#!" id="" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col s12">
+                <a id="botonBorrado" class="waves-effect waves-light btn">Borrar</a>
+            </div>
+        </div>
+
     </div>
-    <div id="panel_actualizar" class="container">
+    <div id="panel_actualizar" class="container" hidden>
         <h3>panel_actualizar</h3>
     </div>
-    <div id="panel_acercade" class="container">
+    <div id="panel_acercade" class="container" hidden>
         <h3>panel_acercade</h3>
     </div>
-    <div id="panel_canal" class="container">
-        <h3>panel_canal</h3>
-        <table id="contenidoCanal"></div>
+    <div id="panel_canal" class="container" hidden style="padding-top: 20px">
+        <div id="contenidoCanal" style="margin-top: 40px"></div>
     </div>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/controlador.js"></script>
     <script type="text/javascript" src="js/canales.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/controladorVistas.js"></script>
+
+    <script type="text/javascript" src="js/controladorGeneral.js"></script>
 
 
 
